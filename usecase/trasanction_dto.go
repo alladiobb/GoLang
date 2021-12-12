@@ -6,7 +6,7 @@ type TransactionDtoInput struct {
 	Amount    float64
 }
 
-type TrasactionDtoOutput struct {
+type TransactionDtoOutput struct {
 	ID           string
 	Status       string
 	ErrorMessage string
