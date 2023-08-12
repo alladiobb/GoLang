@@ -17,4 +17,4 @@ jobs:
           go-version: latest
       #rodar comando    
       - run: go test
-      - run go run math.go
+      - run: go run math.go
