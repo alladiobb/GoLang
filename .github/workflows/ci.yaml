@@ -9,9 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     #passos que vai ser executado
     steps:
-      # Uses: repositório/Action]
-      # https://github.com/actions/checkout
+      # Uses: repositório/Action
+      #faz o checkout do código do seu repositório dentro do runner do GitHub Actions      
       - uses: actions/checkout@v3
+      #configura um ambiente Go no runner
       - uses: actions/setup-go@v4
         with:
           go-version: 1.20
