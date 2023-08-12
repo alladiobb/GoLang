@@ -5,7 +5,7 @@ on:
   pull_request:
     branches:
       - develop
-#ira rodar esse job
+#ira rodar esse jobb
 jobs:
   check-application:
     #onde vai rodar
