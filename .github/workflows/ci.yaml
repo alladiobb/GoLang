@@ -5,6 +5,10 @@ on:
   pull_request:
     branches:
       - develop
+  #testar em várias versões do GO
+  strategy:
+    matrix:
+      go:['1.14','1,15',1,16]
 #ira rodar esse job
 jobs:
   check-application:
@@ -18,7 +22,8 @@ jobs:
       #configura um ambiente Go no runner
       - uses: actions/setup-go@v4
         with:
-          go-version: 1.20
+          #referenciando as versões apontadas dentro de strategy, matrix, go
+          go-version: ${{ matrix.go }}
       #rodar comando    
       - run: go test
       - run: go run math.go
