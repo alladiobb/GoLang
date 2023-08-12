@@ -5,16 +5,19 @@ on:
   pull_request:
     branches:
       - develop
-  #testar em várias versões do GO
-  strategy:
-    matrix:
-      go:['1.14','1,15',1,16]
+
 #ira rodar esse job
 jobs:
   check-application:
     #onde vai rodar
     runs-on: ubuntu-latest
     #passos que vai ser executado
+
+      #testar em várias versões do GO
+    strategy:
+      matrix:
+        go: ['1.14','1.15',1.16]
+    
     steps:
       # Uses: repositório/Action
       #faz o checkout do código do seu repositório dentro do runner do GitHub Actions      
