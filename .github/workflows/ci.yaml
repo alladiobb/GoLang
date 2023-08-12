@@ -1,0 +1,20 @@
+#nome do projeto
+name: ci-golang-workflow
+#toda vez que eu der um push o que vai acontecer?
+on: [push]
+#ira rodar esse job
+jobs:
+  check-application:
+    #onde vai rodar
+    runs-on: ubuntu-latest
+    #passos que vai ser executado
+    steps:
+      # Uses: repositório/Action]
+      # https://github.com/actions/checkout
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: latest
+      #rodar comando    
+      - run: go test
+      - run go run math.go
