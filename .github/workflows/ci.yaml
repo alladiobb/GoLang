@@ -6,7 +6,6 @@ on:
     branches:
       - develop
 #ira rodar esse job
-
 jobs:
   check-application:
     #onde vai rodar
