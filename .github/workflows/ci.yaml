@@ -1,7 +1,10 @@
 #nome do projeto
 name: ci-golang-workflow
 #toda vez que eu der um push o que vai acontecer?
-on: [push]
+on:
+  pull_request:
+    branches:
+      - develop
 #ira rodar esse job
 jobs:
   check-application:
