@@ -5,12 +5,19 @@ on:
   pull_request:
     branches:
       - develop
+
 #ira rodar esse job
 jobs:
   check-application:
     #onde vai rodar
     runs-on: ubuntu-latest
     #passos que vai ser executado
+
+    #testar em várias versões do GO
+    strategy:
+      matrix:
+        go: ['1.14','1.15','1.16','1.17']
+    
     steps:
       # Uses: repositório/Action
       #faz o checkout do código do seu repositório dentro do runner do GitHub Actions      
@@ -18,7 +25,8 @@ jobs:
       #configura um ambiente Go no runner
       - uses: actions/setup-go@v4
         with:
-          go-version: 1.20
+          #referenciando as versões apontadas dentro de strategy, matrix, go
+          go-version: ${{ matrix.go }}
       #rodar comando    
       - run: go test
       - run: go run math.go
